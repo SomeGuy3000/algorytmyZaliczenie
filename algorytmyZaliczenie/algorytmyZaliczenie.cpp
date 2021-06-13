@@ -1,11 +1,16 @@
-﻿#include "generateVarables.h"
+﻿#include "generateVariables.h"
 
-const int tabSize = 100;
+const int constProgress = 1000;
+int n;
 
 int main()
 {
-    generateRandom(tabSize);
-    generateSorted(tabSize);
-    generateReverseSorted(tabSize);
+    cout << "Prosze podac mnoznik n od 0 do 10: \n";
+    cin >> n;
+    int tabSize = constProgress * n;
+
+    int * random = generateRandom(tabSize);
+    int * sorted = generateSorted(tabSize);
+    int * reverseSorted = generateReverseSorted(tabSize);
 }
 

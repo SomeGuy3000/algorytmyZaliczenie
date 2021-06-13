@@ -4,8 +4,6 @@
 
 using namespace std;
 
-const int n = 100;
-
 int * generateRandom(int tabSize) {
 	srand(time(NULL));
 	int * randiom = new int[tabSize];
