@@ -145,6 +145,7 @@
     <ClInclude Include="generateVariables.h" />
     <ClInclude Include="graphalgorithms.h" />
     <ClInclude Include="graphgeneration.h" />
+    <ClInclude Include="monitor.h" />
     <ClInclude Include="searchLib.h" />
     <ClInclude Include="sortLib.h" />
   </ItemGroup>
