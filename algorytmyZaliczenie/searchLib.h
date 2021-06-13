@@ -23,7 +23,7 @@ int linearSearch(int tab[], int tabSize, int x)
 
 }
 
-int binarySearch(int tab[], int l, int r, int x)
+int binarySearch(int tab[], int r, int x, int l=0)
 {
     if (r >= l) {
         int mid = l + (r - l) / 2;
@@ -32,16 +32,16 @@ int binarySearch(int tab[], int l, int r, int x)
             return mid;
 
         if (tab[mid] > x)
-            return binarySearch(tab, l, mid - 1, x);
+            return binarySearch(tab, mid - 1, x, l);
 
-        return binarySearch(tab, mid + 1, r, x);
+        return binarySearch(tab, r, x, mid + 1);
     }
 
     return -1;
 
     //implementacja 
 
-    /*  int result = binarySearch(tab, 0, tabSize - 1, wyszukiwany_element);
+    /*  int result = binarySearch(tab, tabSize - 1, wyszukiwany_element, 0);
         if (result == -1)
             cout << "Element nie znajduje sie w tablicy" << endl;
         else
