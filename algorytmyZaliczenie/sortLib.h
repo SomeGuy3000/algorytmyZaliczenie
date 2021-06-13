@@ -62,7 +62,7 @@ int selectionSort(int tab[], int tabSize)
 
 //quickSort
 
-int partition(int tab[], int p, int r)
+int partition(int tab[], int r, int p)
 {
     int x = tab[p];
     int i = p, j = r, w;
@@ -85,28 +85,27 @@ int partition(int tab[], int p, int r)
     }
 }
 
-int quicksort(int tab[], int p, int r)
+int quickSort(int tab[], int r, int p=0)
 {
     int q;
     if (p < r)
     {
-        q = partition(tab, p, r);
-        quicksort(tab, p, q);
-        quicksort(tab, q + 1, r);
+        q = partition(tab, r, p);
+        quickSort(tab, q, p);
+        quickSort(tab, r, q + 1);
     }
     return 0;
 }
 
-//wywolanie = quicksort(tablica, 0, ilosc_liczb - 1);
-
 //mergeSort
 
-int merge(int tab[], int l, int m, int r)
+int merge(int tab[], int l, int r, int m)
 {
     int n1 = m - l + 1;
     int n2 = r - m;
 
-    int L[n1], R[n2];
+    int* L = new int[n1];
+    int* R = new int[n2];
 
     for (int i = 0; i < n1; i++)
         L[i] = tab[l + i];
@@ -143,13 +142,22 @@ int merge(int tab[], int l, int m, int r)
     return 0;
 }
 
-int mergeSort(int tab[], int l, int r) {
-    if (l >= r) {
+int mergeSort(int tab[], int r, int l=0)
+{
+    if (l >= r) 
+    {
         return;
     }
     int m = l + (r - l) / 2;
-    mergeSort(tab, l, m);
-    mergeSort(tab, m + 1, r);
-    merge(tab, l, m, r);
+    mergeSort(tab, m, l);
+    mergeSort(tab, r, m + 1);
+    merge(tab, l, r, m);
     return 0;
+
 }
+
+//bubbleSort(tab[],tabSize)
+//insertionSort(tab[],tabSize)
+//selectionSort(tab[],tabSize)
+//quickSort(tab[],tabSize-1)
+//mergeSort(tab[],tabSize-1)
