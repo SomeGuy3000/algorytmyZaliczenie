@@ -2,8 +2,11 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    //generateRandom(300, 100);
+    generateRandom(300, 100);
+    cout << "\n";
+    generateSorted(300, 100);
+    cout << "\n";
     generateReverseSorted(300, 100);
+
 }
 

@@ -11,28 +11,23 @@ int * generateRandom(int randRange, int tabSize) {
 	int * randiom = new int[tabSize];
 	for (int i = 0; i < tabSize; i++) {
 		randiom[i] = rand() % randRange;
-		cout << randiom[i] << " ";
 	}
 	return randiom;
 }
 
-int generateSorted() {
-	int randiom[30];
-	for (int i = 0; i < 30; i++)
-	{
-		randiom[i] = i;
-		cout << randiom[i] << " ";
-	}
-	return 0;
-}
-
-int generateReverseSorted(int randRange, int tabSize) {
-	int * random = generateRandom(randRange, tabSize);
+int * generateSorted(int randRange, int tabSize) {
+	int* sorted = new int[tabSize];
 	for (int i = 0; i < tabSize; i++) {
-		cout << random[i] << " ";
+		sorted[i] = i;
 	}
-	return 0;
+	return sorted;
 }
 
-/////////////////////////////////////////////////////////////
+int * generateReverseSorted(int randRange, int tabSize) {
+	int* reverseSorted = new int[tabSize];
+	for (int i = 0; i < tabSize; i++) {
+		reverseSorted[i] = tabSize - i;
+	}
+	return reverseSorted;
+}
 
