@@ -5,20 +5,20 @@
 
 //swap
 
-void swap(int* xp, int* yp)
+void swap(int* x, int* y)
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 //bubbleSort
 
-int bubbleSort(int tab[], int n)
+int bubbleSort(int tab[], int tabSize)
 {
     int i, j;
-    for (i = 0; i < n - 1; i++)
-        for (j = 0; j < n - i - 1; j++)
+    for (i = 0; i < tabSize - 1; i++)
+        for (j = 0; j < tabSize - i - 1; j++)
             if (tab[j] > tab[j + 1])
                 swap(&tab[j], &tab[j + 1]);
     return 0;
@@ -26,10 +26,10 @@ int bubbleSort(int tab[], int n)
 
 //insertionSort
 
-int insertionSort(int tab[], int n)
+int insertionSort(int tab[], int tabSize)
 {
     int i, x, j;
-    for (i = 1; i < n; i++)
+    for (i = 1; i < tabSize; i++)
     {
         x = tab[i];
         j = i - 1;
@@ -46,19 +46,20 @@ int insertionSort(int tab[], int n)
 
 //selectionSort
 
-void selectionSort(int tab[], int n)
+int selectionSort(int tab[], int tabSize)
 {
     int i, j, min;
 
-    for (i = 0; i < n - 1; i++)
+    for (i = 0; i < tabSize - 1; i++)
     {
         min = i;
-        for (j = i + 1; j < n; j++)
+        for (j = i + 1; j < tabSize; j++)
             if (tab[j] < tab[min])
                 min = j;
 
         swap(&tab[min], &tab[i]);
     }
+    return 0;
 }
 
 //quickSort
@@ -86,7 +87,7 @@ int partition(int tab[], int p, int r)
     }
 }
 
-void quicksort(int tab[], int p, int r)
+int quicksort(int tab[], int p, int r)
 {
     int q;
     if (p < r)
@@ -95,13 +96,14 @@ void quicksort(int tab[], int p, int r)
         quicksort(tab, p, q);
         quicksort(tab, q + 1, r);
     }
+    return 0;
 }
 
 //wywolanie = quicksort(tablica, 0, ilosc_liczb - 1);
 
 //mergeSort
 
-void merge(int tab[], int l, int m, int r)
+int merge(int tab[], int l, int m, int r)
 {
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -140,9 +142,10 @@ void merge(int tab[], int l, int m, int r)
         j++;
         k++;
     }
+    return 0;
 }
 
-void mergeSort(int tab[], int l, int r) {
+int mergeSort(int tab[], int l, int r) {
     if (l >= r) {
         return;
     }
@@ -150,4 +153,5 @@ void mergeSort(int tab[], int l, int r) {
     mergeSort(tab, l, m);
     mergeSort(tab, m + 1, r);
     merge(tab, l, m, r);
+    return 0;
 }
