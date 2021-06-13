@@ -29,14 +29,13 @@
     <ClInclude Include="searchLib.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="graphgeneration.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="graphalgorithms.h">
-=======
+		<Filter>Pliki nagłówkowe</Filter>
+	</ClInclude>
     <ClInclude Include="monitor.h">
->>>>>>> 17c7fbfa50b4c64b8d68dd544fefea1bf69c0215
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
