@@ -62,39 +62,25 @@ int selectionSort(int tab[], int tabSize)
 
 //quickSort
 
-int partition(int tab[], int r, int p)
+void quickSort(int* tab, int prawy, int lewy = 0)
 {
-    int x = tab[p];
-    int i = p, j = r, w;
-    while (true)
-    {
-        while (tab[j] > x)
-            j--;
-        while (tab[i] < x)
-            i++;
-        if (i < j) // swap i < j
-        {
-            w = tab[i];
-            tab[i] = tab[j];
-            tab[j] = w;
-            i++;
-            j--;
-        }
-        else // while i >= j
-            return j;
-    }
-}
+    if (prawy <= lewy) return;
 
-int quickSort(int tab[], int r, int p=0)
-{
-    int q;
-    if (p < r)
+    int i = lewy - 1, j = prawy + 1,
+        pivot = tab[(lewy + prawy) / 2];
+    while (1)
     {
-        q = partition(tab, r, p);
-        quickSort(tab, q, p);
-        quickSort(tab, r, q + 1);
+        while (pivot > tab[++i]);
+        while (pivot < tab[--j]);
+        if (i <= j)
+            swap(tab[i], tab[j]);
+        else
+            break;
     }
-    return 0;
+    if (j > lewy)
+        quickSort(tab, j, lewy);
+    if (i < prawy)
+        quickSort(tab, prawy, i);
 }
 
 //mergeSort
@@ -146,14 +132,13 @@ int mergeSort(int tab[], int r, int l=0)
 {
     if (l >= r) 
     {
-        return;
+        return 0;
     }
     int m = l + (r - l) / 2;
     mergeSort(tab, m, l);
     mergeSort(tab, r, m + 1);
     merge(tab, l, r, m);
     return 0;
-
 }
 
 //bubbleSort(tab[],tabSize)

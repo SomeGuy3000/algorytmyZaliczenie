@@ -28,4 +28,3 @@ int * generateReverseSorted(int tabSize) {
 	}
 	return reverseSorted;
 }
-

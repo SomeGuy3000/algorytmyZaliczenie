@@ -23,7 +23,7 @@ int linearSearch(int tab[], int tabSize, int x)
 
 }
 
-int binarySearch(int arr[], int l, int r, int x)
+int binarySearch(int tab[], int l, int r, int x)
 {
     if (r >= l) {
         int mid = l + (r - l) / 2;
