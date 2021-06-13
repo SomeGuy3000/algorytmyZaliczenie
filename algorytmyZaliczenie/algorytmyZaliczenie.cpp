@@ -1,12 +1,12 @@
-﻿#include "functions.h"
+﻿#include "generateVarables.h"
+
+int randRange = 300;
+int tabSize = 100;
 
 int main()
 {
-    generateRandom(300, 100);
-    cout << "\n";
-    generateSorted(300, 100);
-    cout << "\n";
-    generateReverseSorted(300, 100);
-
+    generateRandom(randRange, tabSize);
+    generateSorted(randRange, tabSize);
+    generateReverseSorted(randRange, tabSize);
 }
 
