@@ -6,16 +6,16 @@ using namespace std;
 
 const int n = 100;
 
-int * generateRandom(int randRange, int tabSize) {
+int * generateRandom(int tabSize) {
 	srand(time(NULL));
 	int * randiom = new int[tabSize];
 	for (int i = 0; i < tabSize; i++) {
-		randiom[i] = rand() % randRange;
+		randiom[i] = rand() % tabSize;
 	}
 	return randiom;
 }
 
-int * generateSorted(int randRange, int tabSize) {
+int * generateSorted(int tabSize) {
 	int* sorted = new int[tabSize];
 	for (int i = 0; i < tabSize; i++) {
 		sorted[i] = i;
@@ -23,7 +23,7 @@ int * generateSorted(int randRange, int tabSize) {
 	return sorted;
 }
 
-int * generateReverseSorted(int randRange, int tabSize) {
+int * generateReverseSorted(int tabSize) {
 	int* reverseSorted = new int[tabSize];
 	for (int i = 0; i < tabSize; i++) {
 		reverseSorted[i] = tabSize - i;

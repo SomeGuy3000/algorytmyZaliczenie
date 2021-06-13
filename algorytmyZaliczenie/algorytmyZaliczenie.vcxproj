@@ -142,7 +142,7 @@
     <ClCompile Include="algorytmyZaliczenie.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="functions.h" />
+    <ClInclude Include="generateVarables.h" />
     <ClInclude Include="sortLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
