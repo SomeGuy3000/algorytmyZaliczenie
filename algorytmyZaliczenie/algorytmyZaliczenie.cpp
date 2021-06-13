@@ -2,8 +2,9 @@
 #include "monitor.h"
 
 const int constProgress = 1000;
-int n;
+int n, tabSize;
 char x;
+
 int main()
 {
     cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy):\n";
@@ -14,14 +15,8 @@ int main()
         cout << "Prosze podac mnoznik n od 0 do 10:\n";
         cin >> n;
 
-        int tabSize = constProgress * n;
-        int* random = generateRandom(tabSize);
-        int* sorted = generateSorted(tabSize);
-        int* reverseSorted = generateReverseSorted(tabSize);
-
-        sortTimeMonitor(random, sorted, reverseSorted, tabSize);
-
-
+        tabSize = constProgress * n;
+        sortTimeMonitor(tabSize);
         break;
     }
 }
