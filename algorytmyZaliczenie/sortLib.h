@@ -62,30 +62,30 @@ int selectionSort(int tab[], int tabSize)
 
 //quickSort
 
-void quickSort(int* tab, int prawy, int lewy = 0)
+void quickSort(int tab[], int right, int left = 0)
 {
-    if (prawy <= lewy) return;
+    if (right <= left) return;
 
-    int i = lewy - 1, j = prawy + 1,
-        pivot = tab[(lewy + prawy) / 2];
+    int i = left - 1, j = right + 1,
+        u = tab[(left + right) / 2];
     while (1)
     {
-        while (pivot > tab[++i]);
-        while (pivot < tab[--j]);
+        while (u > tab[++i]);
+        while (u < tab[--j]);
         if (i <= j)
             swap(tab[i], tab[j]);
         else
             break;
     }
-    if (j > lewy)
-        quickSort(tab, j, lewy);
-    if (i < prawy)
-        quickSort(tab, prawy, i);
+    if (j > left)
+        quickSort(tab, j, left);
+    if (i < right)
+        quickSort(tab, right, i);
 }
 
 //mergeSort
 
-int merge(int tab[], int l, int r, int m)
+void  merge(int tab[], int l, int r, int m)
 {
     int n1 = m - l + 1;
     int n2 = r - m;
@@ -125,7 +125,6 @@ int merge(int tab[], int l, int r, int m)
         j++;
         k++;
     }
-    return 0;
 }
 
 int mergeSort(int tab[], int r, int l=0)

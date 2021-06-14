@@ -1,7 +1,7 @@
 ﻿#include "generateVariables.h"
 #include "monitor.h"
 
-const int constProgress = 1000;
+const int constProgress = 5000;
 int n, tabSize;
 char x;
 
@@ -12,7 +12,7 @@ int main()
     switch (x)
     {
     case 'a':
-        cout << "Prosze podac mnoznik n od 0 do 10:\n";
+        cout << "Prosze podac mnoznik n od 0 do 6:\n";
         cin >> n;
 
         tabSize = constProgress * n;
