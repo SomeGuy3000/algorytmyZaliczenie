@@ -14,16 +14,12 @@ int main()
     case 'a':
         cout << "Prosze podac mnoznik n od 0 do 6:\n";
         cin >> n;
-
-        tabSize = constProgress * n;
-        sortTimeMonitor(tabSize);
+        sortTimeMonitor(n);
         break;
     case 'b':
         cout << "Prosze podac mnoznik n od 0 do 6:\n";
         cin >> n;
-
-        tabSize = constProgress * n;
-        searchTimeMonitor(tabSize);
+        searchTimeMonitor(n);
         break;
     }
 }

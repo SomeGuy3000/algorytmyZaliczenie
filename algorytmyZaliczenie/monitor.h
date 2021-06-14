@@ -4,7 +4,10 @@
 
 clock_t beginTime;
 
-void sortTimeMonitor(int tabSize) {
+void sortTimeMonitor(int n) {
+
+	const int constSortProgress = 5000;
+	int tabSize = constSortProgress * n;
 
 	int* random = generateRandom(tabSize);
 	int* sorted = generateSorted(tabSize);
@@ -109,36 +112,34 @@ void sortTimeMonitor(int tabSize) {
 		bubbleSort(temporary, tabSize);
 		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
 }
-void searchTimeMonitor(int tabSize) {
+void searchTimeMonitor(int n) {
 
-	srand(time(NULL));
+	const int constSearchProgress = 75000000;
+	int tabSize = constSearchProgress * n;
 
 	int* sorted = generateSorted(tabSize);
-	int randInt = rand() % tabSize;
-	int numberToFind = sorted[randInt];
+	int numberToFind = sorted[tabSize - 1];
 
-	cout << "Szukany element " << randInt << endl;
 	cout << endl;
-	cout << "Czas wykonania wyszukiwania dla liczb posortowanych:" << endl << endl;
+	cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
 
 		cout << "Wyszukiwanie linear dla " << tabSize << " liczb trwa: ";
 		beginTime = clock();
 		linearSearch(sorted, tabSize, numberToFind);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Wyszukiwanie binary dla " << tabSize << " liczb trwa: ";
 		beginTime = clock();
 		binarySearch(sorted, tabSize, numberToFind);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Wyszukiwanie jump dla " << tabSize << " liczb trwa: ";
 		beginTime = clock();
 		jumpSearch(sorted, tabSize, numberToFind);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Wyszukiwanie interpolation dla " << tabSize << " liczb trwa: ";
 		beginTime = clock();
 		interpolationSearch(sorted, tabSize, numberToFind);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 }
-// cout << jumpSearch(sorted, tabSize, numberToFind) << endl;
