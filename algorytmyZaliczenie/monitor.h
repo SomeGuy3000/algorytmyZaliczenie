@@ -113,22 +113,32 @@ void searchTimeMonitor(int tabSize) {
 
 	srand(time(NULL));
 
-	int* random = generateRandom(tabSize);
-	int* temporary = new int[tabSize];
-	int numberToFind = rand() % tabSize;
+	int* sorted = generateSorted(tabSize);
+	int randInt = rand() % tabSize;
+	int numberToFind = sorted[randInt];
 
+	cout << "Szukany element " << randInt << endl;
 	cout << endl;
-	cout << "Czas wykonania wyszukiwania dla liczb losowych:" << endl << endl;
+	cout << "Czas wykonania wyszukiwania dla liczb posortowanych:" << endl << endl;
 
 		cout << "Wyszukiwanie linear dla " << tabSize << " liczb trwa: ";
-		copy(random, random + tabSize, temporary);
 		beginTime = clock();
-		cout << linearSearch(temporary, tabSize, random[numberToFind]);
+		linearSearch(sorted, tabSize, numberToFind);
 		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
 
 		cout << "Wyszukiwanie binary dla " << tabSize << " liczb trwa: ";
-		copy(random, random + tabSize, temporary);
 		beginTime = clock();
-		cout << binarySearch(temporary, tabSize, random[numberToFind]);
+		binarySearch(sorted, tabSize, numberToFind);
+		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+
+		cout << "Wyszukiwanie jump dla " << tabSize << " liczb trwa: ";
+		beginTime = clock();
+		jumpSearch(sorted, tabSize, numberToFind);
+		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+
+		cout << "Wyszukiwanie interpolation dla " << tabSize << " liczb trwa: ";
+		beginTime = clock();
+		interpolationSearch(sorted, tabSize, numberToFind);
 		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
 }
+// cout << jumpSearch(sorted, tabSize, numberToFind) << endl;

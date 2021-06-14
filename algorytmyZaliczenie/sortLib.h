@@ -139,9 +139,3 @@ int mergeSort(int tab[], int r, int l=0)
     merge(tab, l, r, m);
     return 0;
 }
-
-//bubbleSort(tab[],tabSize)
-//insertionSort(tab[],tabSize)
-//selectionSort(tab[],tabSize)
-//quickSort(tab[],tabSize-1)
-//mergeSort(tab[],tabSize-1)
