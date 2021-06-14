@@ -1,5 +1,7 @@
 #include <iostream>
 #include "sortLib.h"
+#include "searchLib.h"
+
 clock_t beginTime;
 
 void sortTimeMonitor(int tabSize) {
@@ -74,7 +76,6 @@ void sortTimeMonitor(int tabSize) {
 		bubbleSort(temporary, tabSize);
 		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
 
-
 	cout << endl;
 	cout << "Czas wykonania sortowania dla liczb posortowanych w kolejnosci odwrotnej:" << endl << endl;
 		
@@ -107,5 +108,27 @@ void sortTimeMonitor(int tabSize) {
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
 		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+}
+void searchTimeMonitor(int tabSize) {
 
+	srand(time(NULL));
+
+	int* random = generateRandom(tabSize);
+	int* temporary = new int[tabSize];
+	int numberToFind = rand() % tabSize;
+
+	cout << endl;
+	cout << "Czas wykonania wyszukiwania dla liczb losowych:" << endl << endl;
+
+		cout << "Wyszukiwanie linear dla " << tabSize << " liczb trwa: ";
+		copy(random, random + tabSize, temporary);
+		beginTime = clock();
+		cout << linearSearch(temporary, tabSize, random[numberToFind]);
+		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+
+		cout << "Wyszukiwanie binary dla " << tabSize << " liczb trwa: ";
+		copy(random, random + tabSize, temporary);
+		beginTime = clock();
+		cout << binarySearch(temporary, tabSize, random[numberToFind]);
+		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
 }

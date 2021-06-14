@@ -18,5 +18,12 @@ int main()
         tabSize = constProgress * n;
         sortTimeMonitor(tabSize);
         break;
+    case 'b':
+        cout << "Prosze podac mnoznik n od 0 do 6:\n";
+        cin >> n;
+
+        tabSize = constProgress * n;
+        searchTimeMonitor(tabSize);
+        break;
     }
 }
