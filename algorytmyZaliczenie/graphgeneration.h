@@ -4,10 +4,11 @@
 #include <time.h>
 using namespace std;
 
+const int dim = 10; //liczba wierzcholkow grafu
+
 int** generateGraphUnweighted()
 {
 	srand(time(NULL));
-	const int dim = 10; //liczba wierzcholkow grafu
 
 	int** tab = new int* [dim];
 
@@ -50,7 +51,6 @@ int** generateGraphUnweighted()
 int** generateGraphWeighted()
 {
 	srand(time(NULL));
-	const int dim = 10; //liczba wierzcholkow grafu
 
 	int** tab = new int* [dim];
 
