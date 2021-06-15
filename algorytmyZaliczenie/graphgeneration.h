@@ -2,10 +2,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
 using namespace std;
 
 int** generateGraphUnweighted()
