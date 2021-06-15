@@ -3,10 +3,15 @@
 #include <stdlib.h>
 #include <time.h>
 
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
 int** generateGraphUnweighted()
 {
 	srand(time(NULL));
-	int dim = 3; //liczba wierzcholkow grafu
+	const int dim = 10; //liczba wierzcholkow grafu
 
 	int** tab = new int* [dim];
 
@@ -17,13 +22,27 @@ int** generateGraphUnweighted()
 
 	for (int i = 0; i < dim; i++)
 	{
-		for (int j = 0; j < dim; j++)
+		for (int j = i; j < dim; j++)
 		{
-			tab[i][j] = 0;
+			if (i == j)
+				tab[i][j] = 0;
+			else
+				tab[i][j] = rand() % 2 + 0;
+			tab[j][i] = tab[i][j];
 		}
 	}
 
-	return tab;
+
+	for (int i = 0; i < dim; i++)
+	{
+		for (int j = 0; j < dim; j++)
+		{
+			cout << tab[i][j] << " ";
+		}
+		cout << "\n";
+	}
+
+	return 0;
 
 	//for (int i = 0; i < dim; i++)
 	//	delete[] tab[i];
@@ -35,7 +54,7 @@ int** generateGraphUnweighted()
 int** generateGraphWeighted()
 {
 	srand(time(NULL));
-	int dim = 3; //liczba wierzcholkow grafu
+	const int dim = 10; //liczba wierzcholkow grafu
 
 	int** tab = new int* [dim];
 
@@ -46,17 +65,30 @@ int** generateGraphWeighted()
 
 	for (int i = 0; i < dim; i++)
 	{
-		for (int j = 0; j < dim; j++)
+		for (int j = i; j < dim; j++)
 		{
-			tab[i][j] = 0;
+			if (i == j)
+				tab[i][j] = 0;
+			else
+			{
+				tab[i][j] = rand() % 2 + 0;
+				if (tab[i][j] == 1)
+				{
+					tab[i][j] = rand() % 10;
+				}
+				tab[j][i] = tab[i][j];
+			}
 		}
 	}
 
-	return tab;
+	for (int i = 0; i < dim; i++)
+	{
+		for (int j = 0; j < dim; j++)
+		{
+			cout << tab[i][j] << " ";
+		}
+		cout << "\n";
+	}
 
-	//for (int i = 0; i < dim; i++)
-	//	delete[] tab[i];
-
-	//delete[] tab; //usuwanie
-
+	return 0;
 }
