@@ -20,31 +20,31 @@ void sortTimeMonitor(int n) {
 		copy(random, random + tabSize, temporary);
 		beginTime = clock(); 
 		insertionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie selection dla " << tabSize << " liczb trwa: ";
 		copy(random, random + tabSize, temporary);
 		beginTime = clock();
 		selectionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie merge dla " << tabSize << " liczb trwa: ";
 		copy(random, random + tabSize, temporary);
 		beginTime = clock();
 		mergeSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie quick dla " << tabSize << " liczb trwa: ";
 		copy(random, random + tabSize, temporary);
 		beginTime = clock();
 		quickSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
 		copy(random, random + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 	cout << endl;
 	cout << "Czas wykonania sortowania dla liczb posortowanych:" << endl << endl;
@@ -53,31 +53,31 @@ void sortTimeMonitor(int n) {
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		insertionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie selection dla " << tabSize << " liczb trwa: ";
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		selectionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie merge dla " << tabSize << " liczb trwa: ";
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		mergeSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie quick dla " << tabSize << " liczb trwa: ";
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		quickSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 	cout << endl;
 	cout << "Czas wykonania sortowania dla liczb posortowanych w kolejnosci odwrotnej:" << endl << endl;
@@ -86,31 +86,31 @@ void sortTimeMonitor(int n) {
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		insertionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie selection dla " << tabSize << " liczb trwa: ";
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		selectionSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie merge dla " << tabSize << " liczb trwa: ";
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		mergeSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie quick dla " << tabSize << " liczb trwa: ";
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		quickSort(temporary, tabSize - 1);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
-		cout << float(clock() - beginTime) / CLOCKS_PER_SEC << " sec." << endl;
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 }
 void searchTimeMonitor(int n) {
 
