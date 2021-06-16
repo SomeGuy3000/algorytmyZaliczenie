@@ -9,7 +9,7 @@ int inputFromOneToSix() {
     return z;
 }
 
-void userInterface()
+int userInterface()
 {
     int n;
     char x;
@@ -17,7 +17,7 @@ void userInterface()
     {
         std::cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy): \n";
         std::cin >> x;
-    } while (x != 'a' && x != 'b' && x != 'c');
+    } while (x != 'a' && x != 'b' && x != 'c' && x != 'd');
 
     switch (x)
     {
@@ -32,6 +32,9 @@ void userInterface()
         case 'c':
             n = inputFromOneToSix();
             graphMonitor(n);
+            break;
+        case 'd':
+            return 0;
             break;
     }
 }

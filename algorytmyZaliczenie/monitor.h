@@ -170,5 +170,7 @@ void graphMonitor(int n) {
 	bfs(graph, graphSize);
 	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
+	//dfs(graph, graphSize);
+
 	cout << endl;
 }

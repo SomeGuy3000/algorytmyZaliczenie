@@ -2,6 +2,9 @@
 
 int main()
 {
-    while (true)
-        userInterface();
+    while (true) {
+        int a = userInterface();
+        if (a == 0)
+            break;
+    }
 }
