@@ -44,7 +44,7 @@ void sortTimeMonitor(int n) {
 		quickSort(temporary, tabSize - 1);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
-		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
+		cout << "Sortowanie babelkowe dla " << tabSize << " liczb trwa: ";
 		copy(random, random + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
@@ -77,7 +77,7 @@ void sortTimeMonitor(int n) {
 		quickSort(temporary, tabSize - 1);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
-		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
+		cout << "Sortowanie babelkowe dla " << tabSize << " liczb trwa: ";
 		copy(sorted, sorted + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
@@ -110,7 +110,7 @@ void sortTimeMonitor(int n) {
 		quickSort(temporary, tabSize - 1);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
-		cout << "Sortowanie bombelkowe dla " << tabSize << " liczb trwa: ";
+		cout << "Sortowanie babelkowe dla " << tabSize << " liczb trwa: ";
 		copy(reverseSorted, reverseSorted + tabSize, temporary);
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
