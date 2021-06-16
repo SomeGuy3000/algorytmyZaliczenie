@@ -29,12 +29,9 @@
     <ClInclude Include="searchLib.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="graphgeneration.h">
+    <ClInclude Include="graphLib.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="graphalgorithms.h">
-		<Filter>Pliki nagłówkowe</Filter>
-	</ClInclude>
     <ClInclude Include="monitor.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>

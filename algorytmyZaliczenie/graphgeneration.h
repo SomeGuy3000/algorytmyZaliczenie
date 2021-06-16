@@ -4,9 +4,9 @@
 #include <time.h>
 using namespace std;
 
-const int dim = 10; //liczba wierzcholkow grafu
+//const int dim = 10; //liczba wierzcholkow grafu
 
-int** generateGraphUnweighted()
+int** generateGraphUnweighted(int dim)
 {
 	srand(time(NULL));
 
@@ -48,7 +48,7 @@ int** generateGraphUnweighted()
 
 }
 
-int** generateGraphWeighted()
+int** generateGraphWeighted(int dim)
 {
 	srand(time(NULL));
 
@@ -61,6 +61,9 @@ int** generateGraphWeighted()
 
 	for (int i = 0; i < dim; i++)
 	{
+		int maxZerosFromDiagonal = dim -2 -i;
+		int zerosCount = 0;
+
 		for (int j = i; j < dim; j++)
 		{
 			if (i == j)
@@ -68,9 +71,17 @@ int** generateGraphWeighted()
 			else
 			{
 				tab[i][j] = rand() % 2 + 0;
-				if (tab[i][j] == 1)
+				if (zerosCount == maxZerosFromDiagonal)
 				{
 					tab[i][j] = rand() % 10;
+				}
+				else if (tab[i][j] == 1)
+				{
+					tab[i][j] = rand() % 10;
+				}
+				else 
+				{
+					zerosCount += 1;
 				}
 				tab[j][i] = tab[i][j];
 			}
@@ -86,5 +97,5 @@ int** generateGraphWeighted()
 		cout << "\n";
 	}
 
-	return 0;
+	return tab;
 }

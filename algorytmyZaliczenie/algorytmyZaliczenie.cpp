@@ -1,5 +1,4 @@
-﻿#include "generateVariables.h"
-#include "monitor.h"
+﻿#include "monitor.h"
 
 const int constProgress = 5000;
 int n, tabSize;
@@ -20,6 +19,11 @@ int main()
         cout << "Prosze podac mnoznik n od 0 do 6:\n";
         cin >> n;
         searchTimeMonitor(n);
+        break;
+    case 'c':
+        cout << "Prosze podac mnoznik n od 0 do 6:\n";
+        cin >> n;
+        graphMonitor(n);
         break;
     }
 }

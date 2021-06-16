@@ -1,6 +1,10 @@
 #include <iostream>
+#include "generateVariables.h"
+#include "graphGeneration.h"
+
 #include "sortLib.h"
 #include "searchLib.h"
+#include "graphLib.h"
 
 clock_t beginTime;
 
@@ -142,4 +146,23 @@ void searchTimeMonitor(int n) {
 		beginTime = clock();
 		interpolationSearch(sorted, tabSize, numberToFind);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+}
+
+void graphMonitor(int n) {
+	const int constGraphProgress = 500;
+	int graphSize = constGraphProgress * n;
+	int** graph = generateGraph(graphSize);
+
+	cout << endl;
+	cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
+
+	cout << "Algortm Dijkstry dla grafu wielkosci " << graphSize << " trwa: ";
+	beginTime = clock();
+	dijkstra(graph, graphSize);
+	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+	cout << "Algortm BFS dla grafu wielkosci " << graphSize << " trwa: ";
+	beginTime = clock();
+	bfs(graph, graphSize);
+	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 }
