@@ -147,6 +147,7 @@
     <ClInclude Include="monitor.h" />
     <ClInclude Include="searchLib.h" />
     <ClInclude Include="sortLib.h" />
+    <ClInclude Include="userInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
