@@ -158,6 +158,8 @@ void graphMonitor(int n) {
 	int graphSize = constGraphProgress * n;
 	int graphDfsSize = constDfsProgress * n;
 	int** graph = generateGraph(graphSize);
+	int** graphDfs = generateGraph(graphDfsSize);
+
 
 	cout << endl;
 	cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
@@ -174,7 +176,7 @@ void graphMonitor(int n) {
 
 	cout << "Algortm DFS dla grafu wielkosci " << graphDfsSize << " trwa: ";
 	beginTime = clock();
-	dfs(graph, graphDfsSize);
+	dfs(graphDfs, graphDfsSize);
 	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 	cout << endl;
