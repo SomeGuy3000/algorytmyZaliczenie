@@ -15,7 +15,7 @@ int userInterface()
     char x;
     do
     {
-        std::cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy): \n";
+        std::cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy, d. wyjscie z programu): \n";
         std::cin >> x;
     } while (x != 'a' && x != 'b' && x != 'c' && x != 'd');
 
