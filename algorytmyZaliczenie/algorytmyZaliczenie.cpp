@@ -2,5 +2,6 @@
 
 int main()
 {
-    userInterface();
+    while (true)
+        userInterface();
 }

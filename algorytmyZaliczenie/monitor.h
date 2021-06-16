@@ -115,6 +115,8 @@ void sortTimeMonitor(int n) {
 		beginTime = clock();
 		bubbleSort(temporary, tabSize);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+	cout << endl;
 }
 void searchTimeMonitor(int n) {
 
@@ -146,6 +148,8 @@ void searchTimeMonitor(int n) {
 		beginTime = clock();
 		interpolationSearch(sorted, tabSize, numberToFind);
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+		cout << endl;
 }
 
 void graphMonitor(int n) {
@@ -165,4 +169,6 @@ void graphMonitor(int n) {
 	beginTime = clock();
 	bfs(graph, graphSize);
 	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+	cout << endl;
 }
