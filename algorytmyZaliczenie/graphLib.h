@@ -46,7 +46,6 @@ void dijkstra(int** graph, int size, int start = 0)
                 dist[v] = dist[u] + graph[u][v];
     }
 
-    //printSolution(dist, size);
 }
 
 void bfs(int** graph, int size) {
