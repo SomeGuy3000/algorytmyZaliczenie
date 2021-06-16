@@ -77,17 +77,15 @@ void bfs(int** graph, int size) {
     }
 }
 
-void dfs(int** graph, int size, int start = 0, int a = 0, int* vizited = 0) {
-    int* tab = new int[size];
-    if (vizited != 0) {
-        copy(vizited, vizited + size, tab);
-    }
-    for (int i = start; i < size - start; i++) {
-        if (graph[0][i] > 0) {
-            tab[a] = i;
-            a += 1;
-            dfs(graph, size, start, a, tab);
-            cout << vizited[a] << " ";
+void dfs(int** graph, int size, int start = 0) {
+    if (graph[start][0] != -1) {
+        for (int i = start; i < size - start; i++) {
+            if (graph[start][i] > 0) {
+                if (i == 0) {
+                    graph[start][i] = -1;
+                }
+                dfs(graph, size, i);
+            }
         }
-    }    
+    }  
 }
