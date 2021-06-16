@@ -153,7 +153,7 @@ void searchTimeMonitor(int n) {
 }
 
 void graphMonitor(int n) {
-	const int constGraphProgress = 500;
+	const int constGraphProgress = 10;
 	int graphSize = constGraphProgress * n;
 	int** graph = generateGraph(graphSize);
 
