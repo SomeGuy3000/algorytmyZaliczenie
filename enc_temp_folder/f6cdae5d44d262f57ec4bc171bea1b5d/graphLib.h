@@ -166,6 +166,8 @@ void constansDfs (int graph[V][V], int size = V, int start = 0) {
                 if (i == 0) {
                     graph[start][i] = -1;
                 }
+                cout << endl;
+                cout << graph[start][i] << " ";
                 constansDfs(graph, size, i);
             }
         }

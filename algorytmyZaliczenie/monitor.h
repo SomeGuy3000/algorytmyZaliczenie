@@ -164,7 +164,7 @@ void graphMonitor(int n) {
 
 
 	cout << endl;
-	cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
+	cout << "Czas wykonania algorytmow grafowych:" << endl << endl;
 
 	cout << "Algortm Dijkstry dla grafu wielkosci " << graphSize << " trwa: ";
 	beginTime = clock();
@@ -196,21 +196,26 @@ void graphMonitor(int n) {
 							{ 0,  0, 2,  0,  0,  0, 6,  7, 0 } };
 
 		cout << endl;
-		cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
 
-		cout << "Algortm Dijkstry dla grafu wielkosci " << V << " trwa: ";
+		cout << "Algortm Dijkstry: ";
 		beginTime = clock();
 		constansDijkstra(graph);
+		cout << "Czas trwania: ";
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+		cout << endl;
 
-		cout << "Algortm BFS dla grafu wielkosci " << V << " trwa: ";
+		cout << "Algortm BFS odwiedza kolejno wierzcholki: ";
 		beginTime = clock();
 		constansBfs(graph);
+		cout << "Czas trwania: ";
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+		cout << endl;
 
-		cout << "Algortm DFS dla grafu wielkosci " << V << " trwa: ";
+		cout << "Algortm DFS wartosci kolejnych odwiedzanych wierzcholkow: ";
 		beginTime = clock();
 		constansDfs(graph);
+		cout << endl << endl;
+		cout << "Czas trwania: ";
 		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 		cout << endl;
