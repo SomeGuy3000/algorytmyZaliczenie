@@ -6,6 +6,8 @@
 #include "searchLib.h"
 #include "graphLib.h"
 
+#define V 9
+
 clock_t beginTime;
 
 void sortTimeMonitor(int n) {
@@ -180,4 +182,36 @@ void graphMonitor(int n) {
 	cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
 
 	cout << endl;
+}
+
+	void graphConstansMonitor() {
+		int graph[V][V] = { { 0,  4, 0,  0,  0,  0, 0,  8, 0 },
+							{ 4,  0, 8,  0,  0,  0, 0, 11, 0 },
+							{ 0,  8, 0,  7,  0,  4, 0,  0, 2 },
+							{ 0,  0, 7,  0,  9, 14, 0,  0, 0 },
+							{ 0,  0, 0,  9,  0, 10, 0,  0, 0 },
+							{ 0,  0, 4, 14, 10,  0, 2,  0, 0 },
+							{ 0,  0, 0,  0,  0,  2, 0,  1, 6 },
+							{ 8, 11, 0,  0,  0,  0, 1,  0, 7 },
+							{ 0,  0, 2,  0,  0,  0, 6,  7, 0 } };
+
+		cout << endl;
+		cout << "Czas wykonania wyszukiwania ostatniego elementu dla liczb posortowanych:" << endl << endl;
+
+		cout << "Algortm Dijkstry dla grafu wielkosci " << V << " trwa: ";
+		beginTime = clock();
+		constansDijkstra(graph);
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+		cout << "Algortm BFS dla grafu wielkosci " << V << " trwa: ";
+		beginTime = clock();
+		constansBfs(graph);
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+		cout << "Algortm DFS dla grafu wielkosci " << V << " trwa: ";
+		beginTime = clock();
+		constansDfs(graph);
+		cout << float(clock() - beginTime) / (CLOCKS_PER_SEC / 1000) << " milisec." << endl;
+
+		cout << endl;
 }

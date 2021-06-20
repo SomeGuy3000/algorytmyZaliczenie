@@ -15,9 +15,9 @@ int userInterface()
     char x;
     do
     {
-        std::cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy, d. wyjscie z programu): \n";
+        std::cout << "Prosze wybrac zadanie do wykonania (a. sortowanie, b. wyszukiwanie, c. grafy, d. grafy od stalej, e. wyjscie z programu): \n";
         std::cin >> x;
-    } while (x != 'a' && x != 'b' && x != 'c' && x != 'd');
+    } while (x != 'a' && x != 'b' && x != 'c' && x != 'd' && x != 'e');
 
     switch (x)
     {
@@ -34,6 +34,9 @@ int userInterface()
             graphMonitor(n);
             break;
         case 'd':
+            graphConstansMonitor();
+            break;
+        case 'e':
             return 0;
             break;
     }
